@@ -15,9 +15,6 @@
   <article>
     <section class="panel panel-left">
       <div>
-        <figure>
-          <img src={profileImg} alt="profile" />
-        </figure>
         <nav>
           <span on:click={() => showContent('about')} on:keypress>About</span>
           <span on:click={() => showContent('projects')} on:keypress
@@ -26,6 +23,9 @@
           <span on:click={() => showContent('music')} on:keypress>Music</span>
           <span on:click={() => showContent('art')} on:keypress>Artwork</span>
         </nav>
+        <figure>
+          <img src={profileImg} alt="profile" />
+        </figure>
       </div>
     </section>
     <section class="panel panel-right">
@@ -95,22 +95,29 @@
 </main>
 
 <style lang="scss">
+  $screen-md: 768px;
   main {
+    display: flex;
     background-color: #f2f2f2;
-    height: 100vh;
     :global {
       font-family: sans-serif;
     }
     > article {
-      display: flex;
-      width: calc(100vw - 32px);
-      height: calc(100vh - 32px);
+      width: 100%;
       padding: 16px;
+      height: calc(100vh - 32px);
+      @media (min-width: $screen-md) {
+        display: flex;
+      }
     }
   }
   .panel {
     display: flex;
-    width: 50%;
+    height: 100vh;
+    @media (min-width: $screen-md) {
+      width: 50%;
+      height: 100%;
+    }
     > div {
       width: 100%;
       margin: 65px 0;
@@ -121,6 +128,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @media (min-width: $screen-md) {
+      flex-direction: column-reverse;
+    }
     > figure {
       margin: 0;
       border: thick double #b8860b;
