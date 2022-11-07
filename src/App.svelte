@@ -126,7 +126,7 @@
   .panel-left > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     @media (min-width: $screen-md) {
       flex-direction: column-reverse;
