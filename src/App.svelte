@@ -40,6 +40,20 @@
         <article class="content content-projects hidden">
           <div>
             <a
+              href="https://qe-mgr-yew.fly.dev/"
+              target="_blank"
+              rel="noreferrer">mgmt app built in rust/yew</a
+            >
+          </div>
+          <div>
+            <a
+              href="https://qe-mgr-svelte.fly.dev/"
+              target="_blank"
+              rel="noreferrer">another mgmt app built in svelte</a
+            >
+          </div>
+          <div>
+            <a
               href="https://github.com/katakeda/boardhop-api-service-go"
               target="_blank"
               rel="noreferrer">api written in golang</a
