@@ -3,11 +3,17 @@
   import haydenMp3 from './assets/hayden.mp3';
   import koumeMp3 from './assets/koume.mp3';
   import yakisobaMp3 from './assets/yakisoba.mp3';
+  import Icon from 'svelte-awesome';
+  import { arrowUp } from 'svelte-awesome/icons';
   const showContent = (id: string) => {
     document.querySelectorAll('.content').forEach((content) => {
       content.classList.add('hidden');
     });
     document.querySelector(`.content-${id}`).classList.remove('hidden');
+    window.scrollTo(0, document.body.scrollHeight);
+  };
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
   };
 </script>
 
@@ -103,6 +109,9 @@
             {/each}
           </div>
         </article>
+        <nav class="mobile-nav">
+          <button on:click={scrollToTop}><Icon data={arrowUp} /></button>
+        </nav>
       </div>
     </section>
   </article>
@@ -219,6 +228,24 @@
           height: 100%;
         }
       }
+    }
+  }
+  .mobile-nav {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+    > button {
+      cursor: pointer;
+      padding: 10px 12px;
+      border-radius: 1000px;
+      border: 1px solid #b8860b;
+      background-color: #b8860b;
+      color: #ffffff;
     }
   }
   .hidden {
